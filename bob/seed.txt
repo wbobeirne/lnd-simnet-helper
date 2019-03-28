@@ -1,0 +1,10 @@
+---------------BEGIN LND CIPHER SEED---------------
+ 1. absent     2. ship     3. infant   4. disagree
+ 5. abandon    6. beef     7. motor    8. memory
+ 9. capital   10. doctor  11. behave  12. mule
+13. hurdle    14. blush   15. dutch   16. negative
+17. identify  18. front   19. ten     20. drift
+21. pear      22. health  23. device  24. visit
+---------------END LND CIPHER SEED-----------------
+
+password: password1
