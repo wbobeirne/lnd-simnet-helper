@@ -4,11 +4,13 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "btcd": "btcd --configfile=./btcd/btcd.conf --datadir=./btcd/data --logdir=./btcd/logs",
-    
+    "btcd": "btcd --configfile=./btcd/btcd.conf --datadir=./btcd/data --logdir=./btcd/logs --txindex --miningaddr=$MINING_ADDR",
     "start": "concurrently -n alice,bob,charlie 'lnd --lnddir=./alice' 'lnd --lnddir=./bob' 'lnd --lnddir=./charlie'",
-    "cmd": "ts-node scripts/cmd.ts",
-    "connection-info": "ts-node scripts/connectionInfo.ts"
+    "btcctl": "ts-node scripts/btcctl.ts",
+    "lncli": "ts-node scripts/lncli.ts",
+    "connection-info": "ts-node scripts/connectionInfo.ts",
+    "fund": "ts-node scripts/fund.ts",
+    "connect": "ts-node scripts/connect.ts"
   },
   "dependencies": {
     "chalk": "2.4.2",

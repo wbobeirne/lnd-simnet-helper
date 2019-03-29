@@ -7,6 +7,7 @@ import { getNodeArg, runNodeCmd } from './util';
 getNodeArg().then(node => {
   const cmd = argv['_'].join(' ');
   const args = { ...argv };
+  console.log(args);
   delete args['node'];
   delete args['_'];
   delete args['$0'];

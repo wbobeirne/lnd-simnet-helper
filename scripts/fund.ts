@@ -3,19 +3,28 @@ import { exec } from 'child_process';
 import { argv } from 'yargs';
 import inquirer from 'inquirer';
 import chalk from 'chalk';
-import { getNodeArg, getPaths, getConf } from './util';
+import { getNodeArg, runBtcdCmd, runNodeCmd } from './util';
 
 
 async function fund(node: string) {
-  const cmd = '';
-  console.log('Running command:', chalk.green(cmd));
-  exec(cmd, (err, stdout) => {
-    if (err) {
-      console.error(err);
-      process.exit(1);
-    }
-    console.log(stdout);
-  });
+  // console.log(`Getting address for ${node}...`);
+  // const lndRes = await runNodeCmd({
+  //   node,
+  //   cmd: 'newaddress p2wkh',
+  // });
+  // const { address } = JSON.parse(lndRes);
+  // console.log('Got address', chalk.green(address));
+
+  console.log('Generating some blocks to get some funds...');
+  await runBtcdCmd({ cmd: 'generate 10' });
+
+  // console.log(`Sending 1 coin to ${chalk.green(address)}...`);
+  // await runBtcdCmd({ cmd: `sendtoaddress "${address}" 1` });
+  
+  // console.log('Generating 6 blocks to confirm send...');
+  // await runBtcdCmd({ cmd: 'generate 6' });
+
+  console.log('All done!');
 }
 
 // Start
