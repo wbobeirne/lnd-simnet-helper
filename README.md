@@ -22,7 +22,10 @@ And this in another terminal you'll leave open:
 yarn start
 ```
 
-Then go through these in a third terminal you'll use for commands:
+~Then go through these in a third terminal you'll use for commands:~
+
+TODO: implement create-node and unlock. Right now the nodes are hard coded in `alice`, `bob`, and `charlie` and you need to manually run `lncli create` and `lncli unlock` for each. `yarn connect` is real though.
+
 ```bash
 # Run as many times as you need nodes
 yarn create-node
